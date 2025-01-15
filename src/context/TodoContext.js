@@ -136,19 +136,24 @@ const TodoOperationsProvider=({children})=>{
       };
 
     // function for completing the task
-    const completeTodo=(id)=>{
-    const completedItem=todos.find((todo)=>todo.id===id);
-    const updatedTodos=todos.filter((todo)=>todo.id!==id);
-    
-    setCompleted((prevCompleted)=>{
-        const updatedCompleted=[...prevCompleted,completedItem];
-        localStorage.setItem('CompletedTodo',JSON.stringify(updatedCompleted));
-        return updatedCompleted
-    })
-    setTodos(updatedTodos);
-    localStorage.setItem('todos',JSON.stringify(updatedTodos));
-    toast.success('completed task removed')
-    }
+    const completeTodo = (id) => {
+      const completedItem = todos.find((todo) => todo.id === id);
+      const updatedTodos = todos.filter((todo) => todo.id !== id);
+  
+      // Ensure that only non-initial tasks are marked as completed
+      if (completedItem && !completedItem.initial) {
+          setCompleted((prevCompleted) => {
+              const updatedCompleted = [...prevCompleted, completedItem];
+              localStorage.setItem('CompletedTodo', JSON.stringify(updatedCompleted));
+              return updatedCompleted;
+          });   
+      }
+  
+      setTodos(updatedTodos);
+      localStorage.setItem('todos', JSON.stringify(updatedTodos));
+      toast.success('Task completed successfully');
+  };
+
     // function for open edit modal
     const openEditModal=(todo)=>{
         setEditingTodo(todo);
