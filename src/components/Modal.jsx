@@ -17,8 +17,8 @@ const Modal = () => {
    }
    if (!modalVisible) return null;
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md mb-28">
         <h3 className="text-xl font-semibold mb-4">Edit Todo</h3>
         <input
           type="text"

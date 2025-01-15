@@ -23,9 +23,9 @@ const handleDeleteAll=()=>{
 
 
   return (
-  <>
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
-    <div className="w-full max-w-xl p-6 bg-white rounded-lg shadow-md">
+    <div className='min-h-screen bg-gray-100'>
+    <div className="flex justify-center p-4  sm:p-8">
+  <div className="w-full max-w-xl p-6 bg-white rounded-lg shadow-md mt-40 md:mt-10">
       <h2 className="text-2xl font-semibold text-center mb-6">Completed Task</h2>
 
    
@@ -57,7 +57,7 @@ const handleDeleteAll=()=>{
       </div>
     </div>
   </div>
-  </>
+  </div>
   )
 }
 
