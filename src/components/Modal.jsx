@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import { useTodoContext } from '../context/TodoContext'
 
 const Modal = () => {
-    const{modalVisible,setModalVisible,editingTodo,setEditingTodo,updateTodoTask,closeEditModal}=useTodoContext()
+    const{modalVisible,editingTodo,updateTodoTask,closeEditModal}=useTodoContext()
     const[editedTask,setEditedTask]=useState(editingTodo?.task||'')
 
     useEffect(()=>{

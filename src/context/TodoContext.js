@@ -23,6 +23,7 @@ const TodoOperationsProvider=({children})=>{
             { id: 2, task: 'example task 2', completed: true,initial:true  }
           ])); 
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
     
     
